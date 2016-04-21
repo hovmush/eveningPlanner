@@ -246,13 +246,17 @@
     [UIView animateWithDuration:0.2 animations:^{
         [self.topButtons[indexOne] setBackgroundColor:self.view.backgroundColor];
         [self.topButtons[indexOne] setTitleColor:[UIColor eveningPlannerGreenColor] forState:UIControlStateNormal];
-        if (indexTwo != 100) {
-            [self.topButtons[indexTwo] setBackgroundColor:self.view.backgroundColor];
-            [self.topButtons[indexTwo] setTitleColor:[UIColor eveningPlannerGreenColor] forState:UIControlStateNormal];
-            
-        }
+        [self.topButtons[indexTwo] setBackgroundColor:self.view.backgroundColor];
+        [self.topButtons[indexTwo] setTitleColor:[UIColor eveningPlannerGreenColor] forState:UIControlStateNormal];
     }];
 }
+- (void)changeColorsOfBottomButtonsWithIndex:(NSInteger)index {
+    [UIView animateWithDuration:0.2 animations:^{
+        [self.bottomButtons[index] setBackgroundColor:self.view.backgroundColor];
+        [self.bottomButtons[index] setTitleColor:[UIColor eveningPlannerGreenColor] forState:UIControlStateNormal];
+    }];
+}
+
 
 - (IBAction)bottomButtonTouched:(UIButton *)sender {
     if ([sender.backgroundColor isEqual:self.view.backgroundColor]) {
@@ -264,13 +268,13 @@
     [self.tableView reloadData];
     if ([sender isEqual:self.bottomButtons[0]]) {
         [UIView animateWithDuration:0.2 animations:^{
-            [self changeColorsOfTopButtonsWithIndex:1 and:100];
+            [self changeColorsOfBottomButtonsWithIndex:1];
             self.isTheFirstBottomButtonTouched = YES;
         }];
     }
     if ([sender isEqual:self.bottomButtons[1]]) {
         [UIView animateWithDuration:0.2 animations:^{
-            [self changeColorsOfTopButtonsWithIndex:0 and:100];
+            [self changeColorsOfBottomButtonsWithIndex:0];
             self.isTheFirstBottomButtonTouched = NO;
         }];
     }

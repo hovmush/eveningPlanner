@@ -126,4 +126,8 @@
     [self.navigationItem setTitleView:barTitle];
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 @end

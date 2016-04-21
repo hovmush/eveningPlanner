@@ -323,14 +323,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="65" id="bli-8x-Bdf" customClass="TableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="65" id="bli-8x-Bdf" customClass="MEPTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bli-8x-Bdf" id="eDI-Zx-iIH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KFC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-0V-TVS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="KFC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-0V-TVS">
                                                     <rect key="frame" x="82" y="22" width="32" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -343,12 +343,9 @@
                                                         <constraint firstAttribute="width" secondItem="0RR-OI-erj" secondAttribute="height" multiplier="1:1" id="vnG-uj-ri9"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="minus"/>
-                                                    <connections>
-                                                        <action selector="addOrRemoveButtonTouched:" destination="bli-8x-Bdf" eventType="touchUpInside" id="diP-ze-aDZ"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-xR-8aM">
-                                                    <rect key="frame" x="232" y="22" width="42" height="21"/>
+                                                    <rect key="frame" x="119" y="22" width="155" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -424,6 +421,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="co0-9V-agZ" secondAttribute="bottom" id="oDd-d9-NYW"/>
                                                 <constraint firstItem="0RR-OI-erj" firstAttribute="centerY" secondItem="eDI-Zx-iIH" secondAttribute="centerY" id="sVZ-aw-3PJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="rvr-ci-SIJ" secondAttribute="bottom" id="tDZ-dz-eNa"/>
+                                                <constraint firstItem="fhn-xR-8aM" firstAttribute="leading" secondItem="LN8-0V-TVS" secondAttribute="trailing" constant="5" id="whW-Sk-CGY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -711,7 +709,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9X-oq-kWg" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9X-oq-kWg" customClass="MEPGreenButton">
                                 <rect key="frame" x="107" y="84" width="107" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -725,7 +723,7 @@
                                     <action selector="topButtonTouched:" destination="clz-O6-LKa" eventType="touchUpInside" id="l8t-g6-Doo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="che-bs-Vm7" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="che-bs-Vm7" customClass="MEPGreenButton">
                                 <rect key="frame" x="0.0" y="84" width="107" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -739,7 +737,7 @@
                                     <action selector="topButtonTouched:" destination="clz-O6-LKa" eventType="touchUpInside" id="K3b-fo-6bX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUB-6M-lHZ" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUB-6M-lHZ" customClass="MEPGreenButton">
                                 <rect key="frame" x="214" y="84" width="107" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -753,7 +751,7 @@
                                     <action selector="topButtonTouched:" destination="clz-O6-LKa" eventType="touchUpInside" id="JDU-h8-3qJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-fC-HpV" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-fC-HpV" customClass="MEPGreenButton">
                                 <rect key="frame" x="0.0" y="124" width="160" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -767,7 +765,7 @@
                                     <action selector="bottomButtonTouched:" destination="clz-O6-LKa" eventType="touchUpInside" id="73a-Gj-tuE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgM-pF-hLQ" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgM-pF-hLQ" customClass="MEPGreenButton">
                                 <rect key="frame" x="160" y="124" width="160" height="30"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -785,15 +783,15 @@
                                 <rect key="frame" x="0.0" y="205" width="320" height="363"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="65" id="9Hp-do-pt9" customClass="TableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="65" id="9Hp-do-pt9" customClass="MEPTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Hp-do-pt9" id="weu-AT-89I">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KFC" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPe-jz-ZMy">
-                                                    <rect key="frame" x="82" y="22" width="32" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KFC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPe-jz-ZMy">
+                                                    <rect key="frame" x="82" y="22" width="130" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -805,11 +803,8 @@
                                                         <constraint firstAttribute="width" secondItem="4Sg-n3-CAl" secondAttribute="height" multiplier="1:1" id="lDQ-cK-aoX"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="plus"/>
-                                                    <connections>
-                                                        <action selector="addOrRemoveButtonTouched:" destination="9Hp-do-pt9" eventType="touchUpInside" id="TEC-qS-PWX"/>
-                                                    </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsD-7I-8Sl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="3000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsD-7I-8Sl">
                                                     <rect key="frame" x="217" y="22" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -884,6 +879,7 @@
                                                 <constraint firstItem="4Sg-n3-CAl" firstAttribute="centerY" secondItem="weu-AT-89I" secondAttribute="centerY" id="aYN-Cx-hcc"/>
                                                 <constraint firstAttribute="bottom" secondItem="vin-4v-Czc" secondAttribute="bottom" id="iDK-cI-BZY"/>
                                                 <constraint firstItem="JsD-7I-8Sl" firstAttribute="centerY" secondItem="weu-AT-89I" secondAttribute="centerY" id="iRA-6W-3c8"/>
+                                                <constraint firstItem="JsD-7I-8Sl" firstAttribute="leading" secondItem="fPe-jz-ZMy" secondAttribute="trailing" constant="5" id="mWo-Ty-faR"/>
                                                 <constraint firstItem="Igh-W7-b66" firstAttribute="top" secondItem="weu-AT-89I" secondAttribute="top" id="nz1-X2-SWD"/>
                                                 <constraint firstItem="Igh-W7-b66" firstAttribute="leading" secondItem="weu-AT-89I" secondAttribute="leading" constant="8" id="tqn-k0-BNq"/>
                                                 <constraint firstItem="vin-4v-Czc" firstAttribute="width" secondItem="vin-4v-Czc" secondAttribute="height" multiplier="1:1" id="wci-T1-gXM"/>
@@ -914,7 +910,7 @@
                                     <outlet property="delegate" destination="clz-O6-LKa" id="uyg-v5-ROj"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4f-Q5-JCP" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4f-Q5-JCP" customClass="MEPGreenButton">
                                 <rect key="frame" x="224" y="167" width="62" height="30"/>
                                 <state key="normal" title="Sort by"/>
                                 <connections>
@@ -1045,7 +1041,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvu-XK-Zla" customClass="GreenButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvu-XK-Zla" customClass="MEPGreenButton">
                                 <rect key="frame" x="288" y="167" width="32" height="30"/>
                                 <state key="normal" title="⇡⇣"/>
                                 <connections>
