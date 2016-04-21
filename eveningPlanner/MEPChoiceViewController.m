@@ -10,6 +10,7 @@
 #import "MEPTableViewCell.h"
 #import "MEPMapViewController.h"
 #import "MEPDataManager.h"
+#import "MEPInfoViewController.h"
 
 @interface  MEPChoiceViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -152,6 +153,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MEPInfoViewController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"infoVC"];
+    infoVC.placeObjectID = self.selectedPlacesIDs[indexPath.row];
+    [self showViewController:infoVC sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

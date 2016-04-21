@@ -56,21 +56,27 @@
     [self.tableView reloadData];
     [self basketButtonCustomizing];
     NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
-    for (NSManagedObjectID *temp in self.placesObjectIDs) {
-        MEPPlaces *place = [context objectWithID:temp];
-        self.currentMoney = self.money - [place.price integerValue];
+    if (self.placesObjectIDs.count == 0) {
+        self.currentMoney = self.money;
+    } else {
+        for (NSManagedObjectID *temp in self.placesObjectIDs) {
+            MEPPlaces *place = [context objectWithID:temp];
+            self.currentMoney = self.money - [place.price integerValue];
+        }
     }
     self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
     
 }
 
 - (void)basketButtonCustomizing {
-    UIImage* image = nil;
-    if (self.placesObjectIDs.count == 0) {
-        image = [UIImage imageNamed:@"basket"];
-    } else {
-        image = [UIImage imageNamed:@"basketadd"];
-    }
+    UIImage* __block image = nil;
+    [UIView animateWithDuration:0.4 animations:^{
+        if (self.placesObjectIDs.count == 0) {
+            image = [UIImage imageNamed:@"basket"];
+        } else {
+            image = [UIImage imageNamed:@"basketadd"];
+        }
+    }];
     CGRect frameimg = CGRectMake(0, 0, 30, 30);
     UIButton *myChoicesButton = [[UIButton alloc] initWithFrame:frameimg];
     [myChoicesButton addTarget:self action:@selector(basketButtonTouched)
@@ -180,12 +186,6 @@
         [self.animationPlus layoutIfNeeded];
         self.animationPlusTopConstraint.constant = -190;
         self.animationPlusWidthConstraint.constant = 10;
-    } else {
-        self.animationPlusTopConstraint.constant = -140;
-        self.animationPlusWidthConstraint.constant = 10;
-        [self.animationPlus layoutIfNeeded];
-        self.animationPlusTopConstraint.constant = 20;
-        self.animationPlusWidthConstraint.constant = 45;
     }
     self.animationPlus.hidden = NO;
     [UIView animateWithDuration:0.4 animations:^{
