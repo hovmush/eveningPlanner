@@ -118,8 +118,8 @@
         NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
         MEPPlaces *place = [context objectWithID:self.placeObjectID];
         if (self.currentMoney - [place.price integerValue] <0) {
-            UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"No Money"
-                                                                                message:@"You have not so much money"
+            UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"Warning!"
+                                                                                message:@"Please, change your sum."
                                                                          preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                style:UIAlertActionStyleDefault handler:nil];

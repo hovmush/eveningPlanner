@@ -29,16 +29,6 @@
     self.shouldHideRemoveBtn = YES;
     self.clearButton.hidden = YES;
     
-    /*if(!self.selectedPlacesIDs.count) {
-     //CGRect labelFrame = CGRectMake(0.0f, 0.0f, 100.0f, 23.0f);
-     UILabel *myLabel = [[UILabel alloc]init];
-     myLabel.text = @"You don't have any places";
-     myLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-     myLabel.center = self.view.center;
-     [myLabel sizeToFit];
-     [self.view addSubview:myLabel];
-     
-     }*/
 }
 
 - (IBAction)clearButtonAction {
@@ -103,8 +93,6 @@
     [[cell addOrRemoveButton] setHidden:YES];
     [cell showRating:place.rating];
     
-    //cell.addOrRemoveButton.tag = indexPath.row;
-    
     [cell.addOrRemoveButton addTarget:self action:@selector(removeButtonActionForTableView:)
                      forControlEvents:UIControlEventTouchUpInside];
     
@@ -123,7 +111,6 @@
 }
 
 - (void)removeButtonActionForTableView: (UIButton *) sender{
-    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(long)sender.tag inSection:0];
     NSIndexPath *indexPath = [self.myTableView indexPathForCell:(MEPTableViewCell *)[[sender superview] superview]];
     
     [self tableView:self.myTableView commitEditingStyle: UITableViewCellEditingStyleDelete forRowAtIndexPath: indexPath];

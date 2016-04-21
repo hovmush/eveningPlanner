@@ -65,7 +65,6 @@
         }
     }
     self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
-    
 }
 
 - (void)basketButtonCustomizing {
@@ -159,8 +158,8 @@
     } else {
         NSInteger money = self.currentMoney - [[self.places[indexPath.row] price] integerValue];
         if (money < 0) {
-            UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"No Money"
-                                                                                message:@"You have not so much money"
+            UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"Warning!"
+                                                                                message:@"Please, change your sum."
                                                                          preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                style:UIAlertActionStyleDefault handler:nil];
