@@ -72,8 +72,8 @@
         secondVC.distanceLimit = [self.rangeLabel.text floatValue] / 1000;
     }
     
-    if (secondVC.money <= 500 || secondVC.money >= 100000) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning!!!" message:@"Please, write in the range from 500 to 100000" preferredStyle:UIAlertControllerStyleAlert];
+    if (secondVC.money < 500 || secondVC.money > 100000) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning!" message:@"Please, enter sum between 500 and 100000." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
         [alert addAction:alertAction];
         alert.view.center = self.view.center;
