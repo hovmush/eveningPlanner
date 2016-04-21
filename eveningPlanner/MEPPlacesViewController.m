@@ -32,7 +32,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *animationPlusWidthConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *animationPlus;
 
-
 @property (strong, nonatomic) id sortingType;
 @property (nonatomic) SEL sortingMethod;
 @property (nonatomic) NSInteger currentMoney;
