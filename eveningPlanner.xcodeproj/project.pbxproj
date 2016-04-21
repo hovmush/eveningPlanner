@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A52B7EA91CC853BB004AF710 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EA81CC853BB004AF710 /* main.m */; };
+		A52B7EAC1CC853BB004AF710 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EAB1CC853BB004AF710 /* AppDelegate.m */; };
+		A52B7EB21CC853BB004AF710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52B7EB01CC853BB004AF710 /* Main.storyboard */; };
+		A52B7EB51CC853BB004AF710 /* eveningPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EB31CC853BB004AF710 /* eveningPlanner.xcdatamodeld */; };
+		A52B7EB71CC853BB004AF710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52B7EB61CC853BB004AF710 /* Assets.xcassets */; };
+		A52B7EBA1CC853BB004AF710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52B7EB81CC853BB004AF710 /* LaunchScreen.storyboard */; };
+		A52B7EC31CC85429004AF710 /* MEPPlaces.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EC21CC85429004AF710 /* MEPPlaces.m */; };
+		A52B7EC61CC854B5004AF710 /* MEPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EC51CC854B5004AF710 /* MEPDataManager.m */; };
+		A52B7ECA1CC85701004AF710 /* MEPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EC91CC85701004AF710 /* MEPWebViewController.m */; };
+		A52B7ECD1CC85756004AF710 /* MEPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7ECC1CC85756004AF710 /* MEPMapViewController.m */; };
+		A52B7ED01CC857E4004AF710 /* MEPMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7ECF1CC857E4004AF710 /* MEPMapAnnotation.m */; };
+		A52B7ED31CC858F5004AF710 /* MEPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7ED21CC858F5004AF710 /* MEPTableViewCell.m */; };
+		A52B7ED61CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7ED51CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.m */; };
+		A52B7ED91CC85A14004AF710 /* MEPGreenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7ED81CC85A14004AF710 /* MEPGreenButton.m */; };
+		A52B7EDC1CC85A91004AF710 /* MEPChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EDB1CC85A91004AF710 /* MEPChoiceViewController.m */; };
+		A52B7EE01CC85BFB004AF710 /* MEPInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EDF1CC85BFB004AF710 /* MEPInfoViewController.m */; };
+		A52B7EE31CC85D72004AF710 /* MEPPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EE21CC85D72004AF710 /* MEPPlacesViewController.m */; };
+		A52B7EE61CC85F41004AF710 /* MEPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B7EE51CC85F41004AF710 /* MEPMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A52B7EA41CC853BB004AF710 /* eveningPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eveningPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A52B7EA81CC853BB004AF710 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A52B7EAA1CC853BB004AF710 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A52B7EAB1CC853BB004AF710 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A52B7EB11CC853BB004AF710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A52B7EB41CC853BB004AF710 /* eveningPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eveningPlanner.xcdatamodel; sourceTree = "<group>"; };
+		A52B7EB61CC853BB004AF710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A52B7EB91CC853BB004AF710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A52B7EBB1CC853BB004AF710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A52B7EC11CC85429004AF710 /* MEPPlaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPPlaces.h; sourceTree = "<group>"; };
+		A52B7EC21CC85429004AF710 /* MEPPlaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPPlaces.m; sourceTree = "<group>"; };
+		A52B7EC41CC854B5004AF710 /* MEPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPDataManager.h; sourceTree = "<group>"; };
+		A52B7EC51CC854B5004AF710 /* MEPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPDataManager.m; sourceTree = "<group>"; };
+		A52B7EC81CC85701004AF710 /* MEPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPWebViewController.h; sourceTree = "<group>"; };
+		A52B7EC91CC85701004AF710 /* MEPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPWebViewController.m; sourceTree = "<group>"; };
+		A52B7ECB1CC85756004AF710 /* MEPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPMapViewController.h; sourceTree = "<group>"; };
+		A52B7ECC1CC85756004AF710 /* MEPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPMapViewController.m; sourceTree = "<group>"; };
+		A52B7ECE1CC857E4004AF710 /* MEPMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPMapAnnotation.h; sourceTree = "<group>"; };
+		A52B7ECF1CC857E4004AF710 /* MEPMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPMapAnnotation.m; sourceTree = "<group>"; };
+		A52B7ED11CC858F5004AF710 /* MEPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPTableViewCell.h; sourceTree = "<group>"; };
+		A52B7ED21CC858F5004AF710 /* MEPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPTableViewCell.m; sourceTree = "<group>"; };
+		A52B7ED41CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MEPEveningPlannerColor.h"; sourceTree = "<group>"; };
+		A52B7ED51CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MEPEveningPlannerColor.m"; sourceTree = "<group>"; };
+		A52B7ED71CC85A14004AF710 /* MEPGreenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPGreenButton.h; sourceTree = "<group>"; };
+		A52B7ED81CC85A14004AF710 /* MEPGreenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPGreenButton.m; sourceTree = "<group>"; };
+		A52B7EDA1CC85A91004AF710 /* MEPChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPChoiceViewController.h; sourceTree = "<group>"; };
+		A52B7EDB1CC85A91004AF710 /* MEPChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPChoiceViewController.m; sourceTree = "<group>"; };
+		A52B7EDE1CC85BFB004AF710 /* MEPInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPInfoViewController.h; sourceTree = "<group>"; };
+		A52B7EDF1CC85BFB004AF710 /* MEPInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPInfoViewController.m; sourceTree = "<group>"; };
+		A52B7EE11CC85D72004AF710 /* MEPPlacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPPlacesViewController.h; sourceTree = "<group>"; };
+		A52B7EE21CC85D72004AF710 /* MEPPlacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPPlacesViewController.m; sourceTree = "<group>"; };
+		A52B7EE41CC85F41004AF710 /* MEPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEPMainViewController.h; sourceTree = "<group>"; };
+		A52B7EE51CC85F41004AF710 /* MEPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEPMainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A52B7EA11CC853BB004AF710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A52B7E9B1CC853BB004AF710 = {
+			isa = PBXGroup;
+			children = (
+				A52B7EA61CC853BB004AF710 /* eveningPlanner */,
+				A52B7EA51CC853BB004AF710 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A52B7EA51CC853BB004AF710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A52B7EA41CC853BB004AF710 /* eveningPlanner.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A52B7EA61CC853BB004AF710 /* eveningPlanner */ = {
+			isa = PBXGroup;
+			children = (
+				A52B7EAA1CC853BB004AF710 /* AppDelegate.h */,
+				A52B7EAB1CC853BB004AF710 /* AppDelegate.m */,
+				A52B7EDD1CC85BBB004AF710 /* ViewControllers */,
+				A52B7EC71CC856B1004AF710 /* CoreData */,
+				A52B7EBB1CC853BB004AF710 /* Info.plist */,
+				A52B7EA71CC853BB004AF710 /* Supporting Files */,
+			);
+			path = eveningPlanner;
+			sourceTree = "<group>";
+		};
+		A52B7EA71CC853BB004AF710 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A52B7EA81CC853BB004AF710 /* main.m */,
+				A52B7ECE1CC857E4004AF710 /* MEPMapAnnotation.h */,
+				A52B7ECF1CC857E4004AF710 /* MEPMapAnnotation.m */,
+				A52B7ED11CC858F5004AF710 /* MEPTableViewCell.h */,
+				A52B7ED21CC858F5004AF710 /* MEPTableViewCell.m */,
+				A52B7ED41CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.h */,
+				A52B7ED51CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.m */,
+				A52B7ED71CC85A14004AF710 /* MEPGreenButton.h */,
+				A52B7ED81CC85A14004AF710 /* MEPGreenButton.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A52B7EC71CC856B1004AF710 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A52B7EB61CC853BB004AF710 /* Assets.xcassets */,
+				A52B7EB31CC853BB004AF710 /* eveningPlanner.xcdatamodeld */,
+				A52B7EC11CC85429004AF710 /* MEPPlaces.h */,
+				A52B7EC21CC85429004AF710 /* MEPPlaces.m */,
+				A52B7EC41CC854B5004AF710 /* MEPDataManager.h */,
+				A52B7EC51CC854B5004AF710 /* MEPDataManager.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		A52B7EDD1CC85BBB004AF710 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A52B7EB81CC853BB004AF710 /* LaunchScreen.storyboard */,
+				A52B7EB01CC853BB004AF710 /* Main.storyboard */,
+				A52B7EE41CC85F41004AF710 /* MEPMainViewController.h */,
+				A52B7EE51CC85F41004AF710 /* MEPMainViewController.m */,
+				A52B7EE11CC85D72004AF710 /* MEPPlacesViewController.h */,
+				A52B7EE21CC85D72004AF710 /* MEPPlacesViewController.m */,
+				A52B7EDE1CC85BFB004AF710 /* MEPInfoViewController.h */,
+				A52B7EDF1CC85BFB004AF710 /* MEPInfoViewController.m */,
+				A52B7EDA1CC85A91004AF710 /* MEPChoiceViewController.h */,
+				A52B7EDB1CC85A91004AF710 /* MEPChoiceViewController.m */,
+				A52B7ECB1CC85756004AF710 /* MEPMapViewController.h */,
+				A52B7ECC1CC85756004AF710 /* MEPMapViewController.m */,
+				A52B7EC81CC85701004AF710 /* MEPWebViewController.h */,
+				A52B7EC91CC85701004AF710 /* MEPWebViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A52B7EA31CC853BB004AF710 /* eveningPlanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A52B7EBE1CC853BB004AF710 /* Build configuration list for PBXNativeTarget "eveningPlanner" */;
+			buildPhases = (
+				A52B7EA01CC853BB004AF710 /* Sources */,
+				A52B7EA11CC853BB004AF710 /* Frameworks */,
+				A52B7EA21CC853BB004AF710 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eveningPlanner;
+			productName = eveningPlanner;
+			productReference = A52B7EA41CC853BB004AF710 /* eveningPlanner.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A52B7E9C1CC853BB004AF710 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = ACA;
+				TargetAttributes = {
+					A52B7EA31CC853BB004AF710 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 47273DE9GS;
+					};
+				};
+			};
+			buildConfigurationList = A52B7E9F1CC853BB004AF710 /* Build configuration list for PBXProject "eveningPlanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A52B7E9B1CC853BB004AF710;
+			productRefGroup = A52B7EA51CC853BB004AF710 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A52B7EA31CC853BB004AF710 /* eveningPlanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A52B7EA21CC853BB004AF710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A52B7EBA1CC853BB004AF710 /* LaunchScreen.storyboard in Resources */,
+				A52B7EB71CC853BB004AF710 /* Assets.xcassets in Resources */,
+				A52B7EB21CC853BB004AF710 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A52B7EA01CC853BB004AF710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A52B7EDC1CC85A91004AF710 /* MEPChoiceViewController.m in Sources */,
+				A52B7ED01CC857E4004AF710 /* MEPMapAnnotation.m in Sources */,
+				A52B7EC31CC85429004AF710 /* MEPPlaces.m in Sources */,
+				A52B7EAC1CC853BB004AF710 /* AppDelegate.m in Sources */,
+				A52B7EE61CC85F41004AF710 /* MEPMainViewController.m in Sources */,
+				A52B7EE01CC85BFB004AF710 /* MEPInfoViewController.m in Sources */,
+				A52B7ED91CC85A14004AF710 /* MEPGreenButton.m in Sources */,
+				A52B7ECA1CC85701004AF710 /* MEPWebViewController.m in Sources */,
+				A52B7EC61CC854B5004AF710 /* MEPDataManager.m in Sources */,
+				A52B7ED31CC858F5004AF710 /* MEPTableViewCell.m in Sources */,
+				A52B7ED61CC859D6004AF710 /* UIColor+MEPEveningPlannerColor.m in Sources */,
+				A52B7EA91CC853BB004AF710 /* main.m in Sources */,
+				A52B7EE31CC85D72004AF710 /* MEPPlacesViewController.m in Sources */,
+				A52B7EB51CC853BB004AF710 /* eveningPlanner.xcdatamodeld in Sources */,
+				A52B7ECD1CC85756004AF710 /* MEPMapViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A52B7EB01CC853BB004AF710 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A52B7EB11CC853BB004AF710 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A52B7EB81CC853BB004AF710 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A52B7EB91CC853BB004AF710 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A52B7EBC1CC853BB004AF710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A52B7EBD1CC853BB004AF710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A52B7EBF1CC853BB004AF710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = eveningPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aca.eveningPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A52B7EC01CC853BB004AF710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = eveningPlanner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aca.eveningPlanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A52B7E9F1CC853BB004AF710 /* Build configuration list for PBXProject "eveningPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A52B7EBC1CC853BB004AF710 /* Debug */,
+				A52B7EBD1CC853BB004AF710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A52B7EBE1CC853BB004AF710 /* Build configuration list for PBXNativeTarget "eveningPlanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A52B7EBF1CC853BB004AF710 /* Debug */,
+				A52B7EC01CC853BB004AF710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A52B7EB31CC853BB004AF710 /* eveningPlanner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A52B7EB41CC853BB004AF710 /* eveningPlanner.xcdatamodel */,
+			);
+			currentVersion = A52B7EB41CC853BB004AF710 /* eveningPlanner.xcdatamodel */;
+			path = eveningPlanner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A52B7E9C1CC853BB004AF710 /* Project object */;
+}
