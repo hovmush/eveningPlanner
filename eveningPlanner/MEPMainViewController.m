@@ -65,7 +65,13 @@
 
 - (IBAction)searchButtonTouched:(id)sender {
     MEPPlacesViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondVC"];
-    secondVC.money = [self.moneyField.text integerValue];
+    if(![self.moneyField.text integerValue]) {
+        secondVC.money = 5000;
+    }
+    else {
+        secondVC.money = [self.moneyField.text integerValue];
+    }
+    
     if ([self.rangeLabel.text floatValue] < 100) {
         secondVC.distanceLimit = [self.rangeLabel.text floatValue];
     } else {
