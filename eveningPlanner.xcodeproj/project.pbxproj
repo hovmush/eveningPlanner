@@ -184,7 +184,7 @@
 				TargetAttributes = {
 					A52B7EA31CC853BB004AF710 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 47273DE9GS;
+						DevelopmentTeam = 6U8RWC3989;
 					};
 				};
 			};
@@ -355,7 +355,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = eveningPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aca.eveningPlanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aca.evPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -368,7 +368,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = eveningPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aca.eveningPlanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aca.evPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
