@@ -73,8 +73,8 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     [Aeon setName:@"Aeon"
   descriptionInfo:@"AEON, Yerevan’s first ever anti-café, first opened its doors in the unbelievably cold winter of 2014. The unfamiliar word 'anti-café', its unique name and its hard-to-find location quickly grabbed the interest of social networks and the media. Now it feels like AEON has always been here, at the corner of Teryan and Pushkin streets, in the backyard of the ruins of the destroyed Afrikyans’ Club. AEON, Yerevan’s first ever anti-café, first opened its doors in the unbelievably cold winter of 2014. The unfamiliar word 'anti-café', its unique name and its hard-to-find location quickly grabbed the interest of social networks and the media. Now it feels like AEON has always been here, at the corner of Teryan and Pushkin streets, in the backyard of the ruins of the destroyed Afrikyans’ Club."
              logo:@"aeon-logo"
-            price:@2000
-           rating:@5
+            price:@1500
+           rating:@4
        imageFirst:@"aeonimg1"
       imageSecond:@"aeonimg2"
        imageThird:@"aeonimg3"
@@ -90,8 +90,8 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     [Loft setName:@"Loft"
   descriptionInfo:@"Loft is unique multifunctional center with different functional zones (art and music, healthy lifestyle, games, leisure and rest, cinema hall, kitchen, etc.). It's great place to spend time with family and friends watching movies, cooking, playing various types of intellectual or board games, enjoying ethnic, jazz concerts, dancing events (with coffee, tea and cookies for free). For all up-mentioned you pay 10 AMD per minute (daytime tariff), 17 AMD per minute (evening tariff) and for the whole night- 999 AMD."
              logo:@"loft-logo"
-            price:@2000
-           rating:@4
+            price:@1000
+           rating:@5
        imageFirst:@"loftimg1"
       imageSecond:@"loftimg2"
        imageThird:@"loftimg3"
@@ -144,8 +144,8 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     [GoldsGym setName:@"Gold's Gym"
       descriptionInfo:@"Established in Venice, California in 1965, Gold’s Gym is the largest full service chain in the world with over 700 locations in 42 states and 28 countries. Gold’s Gym offers state of the art exercise equipment and industry leading fitness programs, including group exercise, personal training, cardiovascular equipment, cycling, Pilates, yoga and Cardio.With over 3.5 million members worldwide, Gold’s Gym helps all kinds of people achieve their individual potential through fitness."
                  logo:@"goldsgym-logo"
-                price:@3500
-               rating:@4
+                price:@20000
+               rating:@5
            imageFirst:@"goldsgymimg1"
           imageSecond:@"goldsgymimg2"
            imageThird:@"goldsgymimg3"
@@ -159,10 +159,10 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     
     MEPPlaces *Incourt = [NSEntityDescription insertNewObjectForEntityForName:kEntityNameMEPPlaces inManagedObjectContext:context];
     
-    [Incourt setName:@"Incourt tennis club"
+    [Incourt setName:@"Incourt Tennis Club"
      descriptionInfo:@"Incourt tennis club operates since 1974. Over 40 years our club has become the best choice for, professional tennis players, tennis amateurs and active recreation funs. In 2014 the club was rebranded becoming Incourt tennis club the only professional institution to promote tennis in Armenia. The mission of our club is to form and spread tennis culture turning it to a trendy lifestyle. Incourt tennis club operates within the framework of Kinetic Sports company which also includes Orange Fitness club. "
                 logo:@"incourt-logo"
-               price:@3500
+               price:@5000
               rating:@5
           imageFirst:@"incourtimg1"
          imageSecond:@"incourtimg2"
@@ -181,8 +181,8 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     [GolfArmenia setName:@"Golf Association"
          descriptionInfo:@"Still in the spring of 1998 during his visit in Armenia Vahagn Hovnanyan gave birth to the idea of founding a golf club and developing golf in Armenia. In 2000 on a small piece of earth, surrounded by majestic Ararat, Aragats and Ara mountains, Vahagn Hovnanyan started the construction of “Ararat Golf Club” having no precedent in Armenia and whole Transcaucasia, consisting of 9 playing fields and an athletic field. In the beginning of 2001 the athletic field was put into operation, while the construction of scheduled 9 playing fields was actively progressing. In 2005 the construction activities were completed and for the first time in Armenia there was provided the occasion to play an aristocratic type of sports, GOLF by name,loved by millions of people all over the world. In parallel to the construction of golf fields, there were constructed also 18 “Mini Golf” fields, two tennis courts, a swimming pool, football and basketball fields, etc. In 2005 “Ararat Golf” club was renamed “Ararat Valley Country Club”, with the scope to gather people around the sport of golf. Within the framework of golf development in Armenia in 2007 the first golf competition was organized in Armenia. In the future the Golf Competition gave start of an annual Golf Tournament named by the founder of Ararat Golf Club and the President of Golf Association Mr. Vahak Hovnanian – “Vahakni Open” Golf Tournament."
                     logo:@"golfarmenia-logo"
-                   price:@7000
-                  rating:@3
+                   price:@11000
+                  rating:@4
               imageFirst:@"golfarmeniaimg1"
              imageSecond:@"golfarmeniaimg2"
               imageThird:@"golfarmeniaimg3"
@@ -337,7 +337,7 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     [crumbs setName:@"Crumbs"
     descriptionInfo:@"CRUMBS bread factory specializes in Eu­ropean bread and pastry baking. We use natural, artisan methods and the finest quality ingredients to bake our breads and pastries. All our products are hand-made and baked using reci­pes and techniques perfected over cen­turies. In order to give you a direct access to these treats, CRUMBS has opened café/shops where you can not only have a cup of coffee with your favorite pastry but also enjoy a great meal. Sandwiches, soups, salads and more other delicious products are made right at CRUMBS kitchen."
                logo:@"crumbsLogo"
-              price:@10000
+              price:@2500
              rating:@5
          imageFirst:@"crumbsOne"
         imageSecond:@"crumbsTwo"
@@ -373,7 +373,7 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
     [karas setName:@"Karas"
    descriptionInfo:@"Karas was founded in 2005 in Aremenia. Currently Karas operates as a national food chain including 13 service points. The chain has 5 restaurants in the Yerevan city, 1 restaurant in Yerevan Mall, 1 drive thru format restaurant in Yerevan and 1 restaurant in Tsaghkadzor. There are also 4 bistros in Yerevan and 1 bistro in Abovyan. In 2008 the chain launched delivery service, which is one of the one of the largest delivery services in Armenia today."
               logo:@"karasLogo"
-             price:@1000
+             price:@500
             rating:@4
         imageFirst:@"karasOne"
        imageSecond:@"karasTwo"
