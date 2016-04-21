@@ -56,12 +56,11 @@
     [self.tableView reloadData];
     [self basketButtonCustomizing];
     NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
-    if (self.placesObjectIDs.count == 0) {
-        self.currentMoney = self.money;
-    } else {
+    self.currentMoney = self.money;
+    if (self.placesObjectIDs.count != 0) {
         for (NSManagedObjectID *temp in self.placesObjectIDs) {
             MEPPlaces *place = [context objectWithID:temp];
-            self.currentMoney = self.money - [place.price integerValue];
+            self.currentMoney -= [place.price integerValue];
         }
     }
     self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
@@ -394,16 +393,17 @@
 
 - (void)setSortingViewsAlpha:(NSInteger)alpha {
     [UIView animateWithDuration:0.3 animations:^{
-        for (int i= 0; i < self.sortingButtons.count; i++) {
+        for (int i = 0; i < self.sortingButtons.count; i++) {
             [self.sortingButtons[i] setAlpha:alpha];
             [self.sortByViews[i] setAlpha:alpha];
-            if (alpha == 1) {
-                self.tableView.alpha = 0.3;
-            } else {
-                self.tableView.alpha = 1;
-            }
+        }
+        if (alpha == 1) {
+            self.tableView.alpha = 0.3;
+        } else {
+            self.tableView.alpha = 1;
         }
     }];
+
 }
 
 

@@ -17,6 +17,8 @@
 @property (strong, nonatomic) MKPolylineRenderer *polylineRenderer;
 @property (strong, nonatomic) MKPolyline *polyline;
 
+@property (nonatomic) BOOL isCurrentLocation;
+
 @end
 
 @implementation MEPMapViewController
@@ -30,20 +32,16 @@
                                                                        [self.longitudes[i] doubleValue]);
         MEPMapAnnotation *annotation = [[MEPMapAnnotation alloc] initWithCoordinates:coordinate title:@"KFC" subTitle:@"Fast Food"];
         [self.mapView addAnnotation:annotation];
-    }
-    if (self.latitudes.count == 1) {
+    } if (self.latitudes.count == 1) {
         self.mapView.showsUserLocation = YES;
         [self getCurrentCoordinates];
         CLLocationCoordinate2D coordinate[2];
-        coordinate[0] = CLLocationCoordinate2DMake([self.latitudes[0] doubleValue], [self.longitudes[0] doubleValue]);
         coordinate[1] = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
                                                    self.locationManager.location.coordinate.longitude);
-        
-        self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate[1], 5000,5000);
+        coordinate[0] = CLLocationCoordinate2DMake([self.latitudes[0] doubleValue], [self.longitudes[0] doubleValue]);
         [self drawPathFrom:coordinate[1] to:coordinate[0]];
-        
     }
-    
+    self.mapView.region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.177610, 44.512412), 10000,10000);
 }
 
 - (void)drawPathFrom:(CLLocationCoordinate2D)startPoint to:(CLLocationCoordinate2D)endPoint {
@@ -106,11 +104,18 @@
     if (pinView == nil) {
         pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"current"];
     }
+    UIImage *pinImage = nil;
+    if (self.latitudes.count == 1 && self.isCurrentLocation) {
+        pinImage = [UIImage imageNamed:@"app-icon"];
+        self.isCurrentLocation = NO;
+    } else {
+        pinImage = [UIImage imageNamed:@"pin"];
+    }
     
-    UIImage *pinImage = [UIImage imageNamed:@"pin"];
     pinView.image = pinImage;
     pinView.canShowCallout = YES;
-    
+    self.isCurrentLocation = YES;
+
     return pinView;
 }
 
