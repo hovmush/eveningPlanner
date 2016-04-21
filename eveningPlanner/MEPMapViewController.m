@@ -30,16 +30,18 @@
     for (int i = 0; i < self.latitudes.count; i++) {
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([self.latitudes[i] doubleValue],
                                                                        [self.longitudes[i] doubleValue]);
-        MEPMapAnnotation *annotation = [[MEPMapAnnotation alloc] initWithCoordinates:coordinate title:@"KFC" subTitle:@"Fast Food"];
+        MEPMapAnnotation *annotation = [[MEPMapAnnotation alloc] initWithCoordinates:coordinate title:[self.places[i] name] subTitle:@""];
         [self.mapView addAnnotation:annotation];
     } if (self.latitudes.count == 1) {
-        self.mapView.showsUserLocation = YES;
         [self getCurrentCoordinates];
-        CLLocationCoordinate2D coordinate[2];
-        coordinate[1] = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
-                                                   self.locationManager.location.coordinate.longitude);
-        coordinate[0] = CLLocationCoordinate2DMake([self.latitudes[0] doubleValue], [self.longitudes[0] doubleValue]);
-        [self drawPathFrom:coordinate[1] to:coordinate[0]];
+        if (self.locationManager.location.coordinate.latitude != 0) {
+            self.mapView.showsUserLocation = YES;
+            CLLocationCoordinate2D coordinate[2];
+            coordinate[1] = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
+                                                       self.locationManager.location.coordinate.longitude);
+            coordinate[0] = CLLocationCoordinate2DMake([self.latitudes[0] doubleValue], [self.longitudes[0] doubleValue]);
+            [self drawPathFrom:coordinate[1] to:coordinate[0]];
+        }
     }
     self.mapView.region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.177610, 44.512412), 10000,10000);
 }
@@ -106,7 +108,7 @@
     }
     UIImage *pinImage = nil;
     if (self.latitudes.count == 1 && self.isCurrentLocation) {
-        pinImage = [UIImage imageNamed:@"app-icon"];
+        pinImage = [UIImage imageNamed:@"currentPng"];
         self.isCurrentLocation = NO;
     } else {
         pinImage = [UIImage imageNamed:@"pin"];

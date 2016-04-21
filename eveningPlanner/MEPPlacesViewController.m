@@ -68,6 +68,7 @@
 
 - (void)basketButtonCustomizing {
     UIImage* __block image = nil;
+    
     [UIView animateWithDuration:0.4 animations:^{
         if (self.placesObjectIDs.count == 0) {
             image = [UIImage imageNamed:@"basket"];
@@ -114,7 +115,13 @@
     [self.bottomButtons[0] setTitle:@"Game" forState:UIControlStateNormal];
     [self.bottomButtons[1] setTitle:@"Gym" forState:UIControlStateNormal];
     
-    self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
+    UILabel *barTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 48)];
+    barTitle.textColor = [UIColor whiteColor];
+    barTitle.text = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
+    [barTitle setFont:[UIFont systemFontOfSize:30]];
+    
+    [self.navigationItem setTitleView:barTitle];
+    //self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
     self.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                      style:UIBarButtonItemStylePlain
@@ -124,10 +131,11 @@
 }
 
 - (void)makeDistanceLimit:(NSArray *)array {
-    CLLocationCoordinate2D userCoordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
-                                                                       self.locationManager.location.coordinate.longitude);
-    NSMutableArray *tempPlaces = [[NSMutableArray alloc] init];
     NSMutableDictionary *tempDistances = [[NSMutableDictionary alloc] init];
+    if (self.locationManager.location.coordinate.latitude != 0) {
+        CLLocationCoordinate2D userCoordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
+                                                                           self.locationManager.location.coordinate.longitude);
+    NSMutableArray *tempPlaces = [[NSMutableArray alloc] init];
     for (int i = 0; i < array.count; i++) {
         CLLocationCoordinate2D placeCoordinate = CLLocationCoordinate2DMake([[array[i] latitude] doubleValue],
                                                                             [[array[i] longitude] doubleValue]);
@@ -142,6 +150,14 @@
     self.places = [tempPlaces copy];
     self.distances = [tempDistances copy];
     [self performSelector:self.sortingMethod];
+    } else {
+        self.places = [array copy];
+        for (int i = 0; i < self.places.count; i++) {
+            [tempDistances setObject:[NSNumber numberWithFloat:0] forKey:[self.places[i] name]];
+        }
+        self.distances = [tempDistances copy];
+    }
+    
 }
 
 - (void)addOrRemoveButtonTouched:(UIButton *)sender {
@@ -327,9 +343,12 @@
     [cell.logo setImage:[UIImage imageNamed:place.logo]];
     [cell.name setText:place.name];
     [cell.price setText:[NSString stringWithFormat:@"%@",place.price]];
-    
-    [cell.distanceLabel setText:[NSString stringWithFormat:@"%.01f kilometer from current position.",
-                                 [self.distances[place.name] floatValue]/1000]];
+    if (self.locationManager.location.coordinate.latitude != 0) {
+        [cell.distanceLabel setText:[NSString stringWithFormat:@"%.01f kilometer from current position.",
+                                     [self.distances[place.name] floatValue]/1000]];
+    } else {
+        [cell.distanceLabel setText:@"Turn On Location Services"];
+    }
     [cell.addOrRemoveButton setBackgroundImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
     for (NSManagedObjectID *temp in self.placesObjectIDs) {
         if ([temp isEqual:place.objectID]) {
