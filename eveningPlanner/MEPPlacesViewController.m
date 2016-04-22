@@ -52,7 +52,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     [self.tableView reloadData];
     [self basketButtonCustomizing];
     NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
@@ -68,6 +67,8 @@
 
 - (void)basketButtonCustomizing {
     UIImage* __block image = nil;
+    CGRect frameimg = CGRectMake(0, 0, 30, 30);
+    UIButton *myChoicesButton = [[UIButton alloc] initWithFrame:frameimg];
     
     [UIView animateWithDuration:0.4 animations:^{
         if (self.placesObjectIDs.count == 0) {
@@ -76,13 +77,16 @@
             image = [UIImage imageNamed:@"basketadd"];
         }
     }];
-    CGRect frameimg = CGRectMake(0, 0, 30, 30);
-    UIButton *myChoicesButton = [[UIButton alloc] initWithFrame:frameimg];
     [myChoicesButton addTarget:self action:@selector(basketButtonTouched)
               forControlEvents:UIControlEventTouchUpInside];
     [myChoicesButton setShowsTouchWhenHighlighted:NO];
     [myChoicesButton setBackgroundImage:image forState:UIControlStateNormal];
     UIBarButtonItem *button =[[UIBarButtonItem alloc] initWithCustomView:myChoicesButton];
+    if (self.placesObjectIDs.count == 0) {
+        button.enabled = NO;
+    } else {
+        button.enabled = YES;
+    }
     self.navigationItem.rightBarButtonItem = button;
     
 }
@@ -129,7 +133,7 @@
     barTitle.textColor = [UIColor whiteColor];
     barTitle.text = [NSString stringWithFormat:@"%ld AMD", (long)money];
     [barTitle setFont:[UIFont systemFontOfSize:30]];
-    [barTitle setFrame:CGRectMake(-20, -20, 40, 48)];
+    [barTitle setFrame:CGRectMake(-50, -50, 40, 48)];
     [self.navigationItem setTitleView:barTitle];
 }
 

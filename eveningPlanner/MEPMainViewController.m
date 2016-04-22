@@ -66,7 +66,7 @@
 - (IBAction)searchButtonTouched:(id)sender {
     MEPPlacesViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"secondVC"];
     if(![self.moneyField.text integerValue]) {
-        secondVC.money = 5000;
+        secondVC.money = 10000;
     }
     else {
         secondVC.money = [self.moneyField.text integerValue];

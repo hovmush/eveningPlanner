@@ -30,6 +30,12 @@
     self.clearButton.hidden = YES;
     
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewDidLoad];
+    self.shouldHideRemoveBtn = YES;
+    self.clearButton.hidden = YES;
+    [self.myTableView reloadData];
+}
 
 - (IBAction)clearButtonAction {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];

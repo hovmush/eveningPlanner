@@ -127,6 +127,11 @@
     [myChoicesButton setShowsTouchWhenHighlighted:NO];
     [myChoicesButton setBackgroundImage:image forState:UIControlStateNormal];
     UIBarButtonItem *button =[[UIBarButtonItem alloc] initWithCustomView:myChoicesButton];
+    if (self.selectedPlacesIDs.count == 0) {
+        button.enabled = NO;
+    } else {
+        button.enabled = YES;
+    }
     self.navigationItem.rightBarButtonItem = button;
     
 }

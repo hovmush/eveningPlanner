@@ -240,9 +240,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="addOrRemoveButton" destination="5UM-Kn-luL" id="o3n-pk-mHf"/>
-                        <outlet property="animationPlus" destination="BGY-mB-pqO" id="kmK-h4-6jm"/>
-                        <outlet property="animationPlusBottomConstraint" destination="Ohl-jQ-UaQ" id="aUN-rx-Hn3"/>
-                        <outlet property="animationPlusCenterXConstraint" destination="2hK-Ot-9lb" id="w1P-tB-zF9"/>
                         <outlet property="animationPlusWidthConstraint" destination="moe-hc-tXh" id="uCL-Bz-CNw"/>
                         <outlet property="callButton" destination="fsX-HA-BoS" id="3ka-iJ-OFp"/>
                         <outlet property="descriptionTextView" destination="hTM-hF-AwI" id="ScC-KN-R1G"/>
@@ -575,13 +572,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5000" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zZV-SY-h6v">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10000" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zZV-SY-h6v">
                                 <rect key="frame" x="20" y="303" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="DWD-Ie-gkd"/>
                                     <constraint firstAttribute="height" constant="40" id="czV-cI-BYb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="3E1-Qa-eOI" id="VHz-Lg-p1p"/>

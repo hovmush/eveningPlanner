@@ -19,6 +19,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     self.checkForDB = [[NSUserDefaults standardUserDefaults] boolForKey:@"isDataInDB"];
     
     if(self.checkForDB != YES) {
