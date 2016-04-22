@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k5C-3E-T9s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k5C-3E-T9s">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -146,11 +146,29 @@
                                     <action selector="pageControllTouched:" destination="H0x-VZ-WMq" eventType="touchUpInside" id="LFQ-EG-KVU"/>
                                 </connections>
                             </pageControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-mB-pqO">
+                                <rect key="frame" x="140" y="520" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SVz-TX-WLo"/>
+                                    <constraint firstAttribute="width" secondItem="BGY-mB-pqO" secondAttribute="height" multiplier="1:1" id="Z63-6r-3bu"/>
+                                    <constraint firstAttribute="width" constant="40" id="moe-hc-tXh"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="plus"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SVz-TX-WLo"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addOrRemoveButtonTouched:" destination="H0x-VZ-WMq" eventType="touchUpInside" id="5Xl-O8-Hso"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hrR-PR-dce" secondAttribute="trailing" id="0LW-6g-GS7"/>
                             <constraint firstItem="itJ-Rq-tvF" firstAttribute="leading" secondItem="2QO-wZ-sCf" secondAttribute="leading" constant="20" id="1HC-zT-51d"/>
+                            <constraint firstItem="BGY-mB-pqO" firstAttribute="centerX" secondItem="2QO-wZ-sCf" secondAttribute="centerX" id="2hK-Ot-9lb"/>
                             <constraint firstItem="JLZ-44-ETD" firstAttribute="leading" secondItem="jid-K1-z5G" secondAttribute="trailing" constant="2" id="6Ke-1F-IMX"/>
                             <constraint firstItem="fsX-HA-BoS" firstAttribute="height" secondItem="2lJ-HQ-lfe" secondAttribute="height" id="7OK-ZG-ugF"/>
                             <constraint firstItem="UOP-9n-YV6" firstAttribute="leading" secondItem="7Dx-6m-5sH" secondAttribute="trailing" constant="2" id="8me-bZ-9Q5"/>
@@ -169,6 +187,7 @@
                             <constraint firstItem="hTM-hF-AwI" firstAttribute="leading" secondItem="2QO-wZ-sCf" secondAttribute="leading" constant="20" id="MdN-1Y-fKg"/>
                             <constraint firstItem="JLZ-44-ETD" firstAttribute="leading" secondItem="jid-K1-z5G" secondAttribute="trailing" constant="2" id="NDa-EL-hmJ"/>
                             <constraint firstItem="QlJ-1s-db0" firstAttribute="leading" secondItem="2QO-wZ-sCf" secondAttribute="leading" constant="20" id="OUX-et-A2y"/>
+                            <constraint firstItem="VtD-yP-Ub3" firstAttribute="top" secondItem="BGY-mB-pqO" secondAttribute="bottom" constant="8" id="Ohl-jQ-UaQ"/>
                             <constraint firstItem="2lJ-HQ-lfe" firstAttribute="top" secondItem="Sl0-Nu-nwK" secondAttribute="bottom" constant="8" id="OuH-OA-IQ9"/>
                             <constraint firstAttribute="trailing" secondItem="66N-80-xFm" secondAttribute="trailing" constant="20" id="P1P-8i-7sw"/>
                             <constraint firstItem="itJ-Rq-tvF" firstAttribute="top" secondItem="hrR-PR-dce" secondAttribute="bottom" constant="13" id="PVR-ap-VBW"/>
@@ -221,6 +240,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="addOrRemoveButton" destination="5UM-Kn-luL" id="o3n-pk-mHf"/>
+                        <outlet property="animationPlus" destination="BGY-mB-pqO" id="kmK-h4-6jm"/>
+                        <outlet property="animationPlusBottomConstraint" destination="Ohl-jQ-UaQ" id="aUN-rx-Hn3"/>
+                        <outlet property="animationPlusCenterXConstraint" destination="2hK-Ot-9lb" id="w1P-tB-zF9"/>
+                        <outlet property="animationPlusWidthConstraint" destination="moe-hc-tXh" id="uCL-Bz-CNw"/>
                         <outlet property="callButton" destination="fsX-HA-BoS" id="3ka-iJ-OFp"/>
                         <outlet property="descriptionTextView" destination="hTM-hF-AwI" id="ScC-KN-R1G"/>
                         <outlet property="imageScrollView" destination="hrR-PR-dce" id="9cc-Bf-SMc"/>

@@ -142,6 +142,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MEPInfoViewController *infoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"infoVC"];
     infoVC.placeObjectID = self.selectedPlacesIDs[indexPath.row];
+    infoVC.selectedPlacesIDs = self.selectedPlacesIDs;
+    infoVC.currentMoney = self.currentMoney;
     [self showViewController:infoVC sender:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

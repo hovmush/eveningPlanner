@@ -23,6 +23,11 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIButton *addOrRemoveButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *animationPlus;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animationPlusCenterXConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animationPlusWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *animationPlusBottomConstraint;
+
 @end
 
 @implementation MEPInfoViewController
@@ -83,6 +88,23 @@
     
     
 }
+
+- (void)plusAnimation {
+    //self.animationPlus.hidden = YES;
+    self.animationPlusBottomConstraint.constant = 8;
+    self.animationPlusWidthConstraint.constant = 40;
+    self.animationPlusCenterXConstraint.constant = 0;
+    [self.animationPlus layoutIfNeeded];
+    
+    self.animationPlus.hidden = NO;
+    self.animationPlusBottomConstraint.constant = 635;
+    self.animationPlusWidthConstraint.constant = 10;
+    self.animationPlusCenterXConstraint.constant = self.view.frame.size.width/2 - 15;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.animationPlus layoutIfNeeded];
+    }];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -126,6 +148,7 @@
             [moneyAlert addAction:okAction];
             [self presentViewController:moneyAlert animated:YES completion:nil];
         } else {
+            [self plusAnimation];
             [sender setBackgroundImage:[UIImage imageNamed:@"minus"] forState:UIControlStateNormal];
             [self.selectedPlacesIDs addObject:self.placeObjectID];
         }

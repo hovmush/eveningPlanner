@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *selectedPlacesIDs;
 
+@property (nonatomic) NSInteger currentMoney;
+
 @end

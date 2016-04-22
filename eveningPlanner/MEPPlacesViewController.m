@@ -106,7 +106,7 @@
 
 - (void)customizeViewController {
     self.currentMoney = self.money;
-    self.sortingMethod = @selector(sortByRating);
+    self.sortingMethod = @selector(sortByDistance);
     self.placesObjectIDs = [[NSMutableArray alloc] init];
     [self makeDistanceLimit:[[MEPDataManager defaultManager] fetchPlaceWith:kPlaceTypeGym and:kPlaceTypeGame]];
     [self.topButtons[1] setBackgroundColor:[UIColor eveningPlannerGreenColor]];
@@ -137,21 +137,25 @@
     if (self.locationManager.location.coordinate.latitude != 0) {
         CLLocationCoordinate2D userCoordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
                                                                            self.locationManager.location.coordinate.longitude);
-    NSMutableArray *tempPlaces = [[NSMutableArray alloc] init];
-    for (int i = 0; i < array.count; i++) {
-        CLLocationCoordinate2D placeCoordinate = CLLocationCoordinate2DMake([[array[i] latitude] doubleValue],
-                                                                            [[array[i] longitude] doubleValue]);
-        MKMapPoint pointOne = MKMapPointForCoordinate(placeCoordinate);
-        MKMapPoint pointTwo = MKMapPointForCoordinate(userCoordinate);
-        CLLocationDistance distance = MKMetersBetweenMapPoints(pointOne, pointTwo);
-        if (self.distanceLimit > distance/1000) {
-            [tempPlaces addObject:array[i]];
-            [tempDistances setObject:[NSNumber numberWithFloat:distance] forKey:[array[i] name]];
+        NSMutableArray *tempPlaces = [[NSMutableArray alloc] init];
+        for (int i = 0; i < array.count; i++) {
+            CLLocationCoordinate2D placeCoordinate = CLLocationCoordinate2DMake([[array[i] latitude] doubleValue],
+                                                                                [[array[i] longitude] doubleValue]);
+            MKMapPoint pointOne = MKMapPointForCoordinate(placeCoordinate);
+            MKMapPoint pointTwo = MKMapPointForCoordinate(userCoordinate);
+            CLLocationDistance distance = MKMetersBetweenMapPoints(pointOne, pointTwo);
+            if (self.distanceLimit > distance/1000) {
+                [tempPlaces addObject:array[i]];
+                [tempDistances setObject:[NSNumber numberWithFloat:distance] forKey:[array[i] name]];
+            }
         }
-    }
-    self.places = [tempPlaces copy];
-    self.distances = [tempDistances copy];
-    [self performSelector:self.sortingMethod];
+        self.places = [tempPlaces copy];
+        self.distances = [tempDistances copy];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:self.sortingMethod];
+#pragma clang diagnostic pop
+        
     } else {
         self.places = [array copy];
         for (int i = 0; i < self.places.count; i++) {
@@ -171,7 +175,7 @@
         
         [sender setBackgroundImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
         [self.placesObjectIDs removeObject:placeID];
-        self.currentMoney = self.currentMoney + [[self.places[indexPath.row] price] integerValue];
+        self.currentMoney += [[self.places[indexPath.row] price] integerValue];
     } else {
         NSInteger money = self.currentMoney - [[self.places[indexPath.row] price] integerValue];
         if (money < 0) {
@@ -215,14 +219,15 @@
 - (void)basketButtonTouched {
     MEPChoiceViewController *myChoiceVC = [self.storyboard instantiateViewControllerWithIdentifier:@"myChoiceVC"];
     myChoiceVC.selectedPlacesIDs = self.placesObjectIDs;
+    myChoiceVC.currentMoney = self.currentMoney;
     [self showViewController:myChoiceVC sender:self];
 }
 
 #pragma mark - GreenButtons methods
 
 - (IBAction)topButtonTouched:(UIButton *)sender {
-    [self changeColorsOfTopButtonsWithIndex:0 and:1];
-    
+    [self changeColorsOfBottomButtonsWithIndex:0];
+    [self changeColorsOfBottomButtonsWithIndex:1];
     if ([sender.backgroundColor isEqual:self.view.backgroundColor]) {
         [UIView animateWithDuration:0.2 animations:^{
             sender.backgroundColor = [UIColor eveningPlannerGreenColor];
@@ -361,7 +366,6 @@
                                  action:@selector(addOrRemoveButtonTouched:)
                        forControlEvents:UIControlEventTouchUpInside];
     [cell showRating:place.rating];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
