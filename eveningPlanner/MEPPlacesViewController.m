@@ -63,7 +63,7 @@
             self.currentMoney -= [place.price integerValue];
         }
     }
-    self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
+    [self setingMoneyField:self.currentMoney];
 }
 
 - (void)basketButtonCustomizing {
@@ -114,20 +114,22 @@
     self.numberOfSelectedTopButton = 2;
     [self.bottomButtons[0] setTitle:@"Game" forState:UIControlStateNormal];
     [self.bottomButtons[1] setTitle:@"Gym" forState:UIControlStateNormal];
-    
-    UILabel *barTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 48)];
-    barTitle.textColor = [UIColor whiteColor];
-    barTitle.text = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
-    [barTitle setFont:[UIFont systemFontOfSize:30]];
-    
-    [self.navigationItem setTitleView:barTitle];
-    //self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
+
+    [self setingMoneyField:self.currentMoney];
     self.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                      style:UIBarButtonItemStylePlain
                                     target:nil
                                     action:nil];
     [self basketButtonCustomizing];
+}
+
+- (void)setingMoneyField:(NSInteger)money {
+    UILabel *barTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 48)];
+    barTitle.textColor = [UIColor whiteColor];
+    barTitle.text = [NSString stringWithFormat:@"%ld AMD", (long)money];
+    [barTitle setFont:[UIFont systemFontOfSize:30]];
+    [self.navigationItem setTitleView:barTitle];
 }
 
 - (void)makeDistanceLimit:(NSArray *)array {
@@ -189,7 +191,7 @@
         }
         
     }
-    self.navigationItem.title = [NSString stringWithFormat:@"%ld AMD", (long)self.currentMoney];
+    [self setingMoneyField:self.currentMoney];
     [self basketButtonCustomizing];
 }
 
