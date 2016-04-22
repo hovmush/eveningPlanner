@@ -125,10 +125,11 @@
 }
 
 - (void)setingMoneyField:(NSInteger)money {
-    UILabel *barTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 48)];
+    UILabel *barTitle = [[UILabel alloc] init];
     barTitle.textColor = [UIColor whiteColor];
     barTitle.text = [NSString stringWithFormat:@"%ld AMD", (long)money];
     [barTitle setFont:[UIFont systemFontOfSize:30]];
+    [barTitle setFrame:CGRectMake(-20, -20, 40, 48)];
     [self.navigationItem setTitleView:barTitle];
 }
 

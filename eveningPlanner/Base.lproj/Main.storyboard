@@ -1192,7 +1192,7 @@
     <resources>
         <image name="Map-Google" width="467" height="449"/>
         <image name="Search" width="256" height="256"/>
-        <image name="app-icon" width="60" height="60"/>
+        <image name="app-icon" width="200" height="200"/>
         <image name="call-icon" width="294" height="296"/>
         <image name="loft-logo" width="225" height="100"/>
         <image name="minus" width="447" height="449"/>

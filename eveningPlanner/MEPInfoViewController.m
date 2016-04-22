@@ -132,9 +132,9 @@
 }
 
 - (IBAction)addOrRemoveButtonTouched:(UIButton *)sender {
+    NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
+    MEPPlaces *place = [context objectWithID:self.placeObjectID];
     if (![sender.currentBackgroundImage isEqual:[UIImage imageNamed:@"minus"]]) {
-        NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
-        MEPPlaces *place = [context objectWithID:self.placeObjectID];
         if (self.currentMoney - [place.price integerValue] <0) {
             UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"Warning!"
                                                                                 message:@"Entered amount is not enough. Please update inserted sum."
@@ -147,9 +147,11 @@
             [self plusAnimation];
             [sender setBackgroundImage:[UIImage imageNamed:@"minus"] forState:UIControlStateNormal];
             [self.selectedPlacesIDs addObject:self.placeObjectID];
+            self.currentMoney -= [[place price] integerValue];
         }
     } else {
         [sender setBackgroundImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
+        self.currentMoney += [[place price] integerValue];
         [self.selectedPlacesIDs removeObject:self.placeObjectID];
     }
     [self basketButtonCustomizing];
@@ -163,7 +165,6 @@
 }
 
 - (IBAction)mapButtonTouched:(id)sender {
-    
     NSManagedObjectContext *context = [[MEPDataManager defaultManager] managedObjectContext];
     MEPPlaces *place = [context objectWithID:self.placeObjectID];
     
@@ -171,7 +172,6 @@
     mapVC.latitudes = [NSArray arrayWithObject:place.latitude];
     mapVC.longitudes = [NSArray arrayWithObject:place.longitude];
     [self showViewController:mapVC sender:self];
-    
 }
 - (IBAction)callPhone:(UIButton *)sender {
     
@@ -195,9 +195,13 @@
 }
 
 - (void) segueToMyChoice {
-    MEPChoiceViewController *myChoiceVC = [self.storyboard instantiateViewControllerWithIdentifier:@"myChoiceVC"];
-    myChoiceVC.selectedPlacesIDs = self.selectedPlacesIDs;
-    [self showViewController:myChoiceVC sender:self];
+    if ([self isEqual:self.navigationController.viewControllers[2]]) {
+        MEPChoiceViewController *myChoiceVC = [self.storyboard instantiateViewControllerWithIdentifier:@"myChoiceVC"];
+        myChoiceVC.selectedPlacesIDs = self.selectedPlacesIDs;
+        [self showViewController:myChoiceVC sender:self];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat pageWidth = self.imageScrollView.frame.size.width;
