@@ -134,36 +134,34 @@
 
 - (void)makeDistanceLimit:(NSArray *)array {
     NSMutableDictionary *tempDistances = [[NSMutableDictionary alloc] init];
+    NSMutableArray *tempPlaces = [[NSMutableArray alloc] init];
+    
     if (self.locationManager.location.coordinate.latitude != 0) {
         CLLocationCoordinate2D userCoordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude,
                                                                            self.locationManager.location.coordinate.longitude);
-        NSMutableArray *tempPlaces = [[NSMutableArray alloc] init];
         for (int i = 0; i < array.count; i++) {
             CLLocationCoordinate2D placeCoordinate = CLLocationCoordinate2DMake([[array[i] latitude] doubleValue],
                                                                                 [[array[i] longitude] doubleValue]);
             MKMapPoint pointOne = MKMapPointForCoordinate(placeCoordinate);
             MKMapPoint pointTwo = MKMapPointForCoordinate(userCoordinate);
             CLLocationDistance distance = MKMetersBetweenMapPoints(pointOne, pointTwo);
-            if (self.distanceLimit > distance/1000) {
+            if (self.distanceLimit > distance/1000 && self.money >= [[array[i] price] integerValue] ) {
                 [tempPlaces addObject:array[i]];
                 [tempDistances setObject:[NSNumber numberWithFloat:distance] forKey:[array[i] name]];
             }
         }
-        self.places = [tempPlaces copy];
-        self.distances = [tempDistances copy];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        [self performSelector:self.sortingMethod];
-#pragma clang diagnostic pop
         
     } else {
-        self.places = [array copy];
         for (int i = 0; i < self.places.count; i++) {
-            [tempDistances setObject:[NSNumber numberWithFloat:0] forKey:[self.places[i] name]];
+            if (self.money > [[array[i] price] integerValue]) {
+                [tempPlaces addObject:array[i]];
+                [tempDistances setObject:[NSNumber numberWithFloat:0] forKey:[self.places[i] name]];
+            }
         }
-        self.distances = [tempDistances copy];
     }
-    
+    self.distances = [tempDistances copy];
+    self.places = [tempPlaces copy];
+    [self performSelector:self.sortingMethod];
 }
 
 - (void)addOrRemoveButtonTouched:(UIButton *)sender {
@@ -180,7 +178,7 @@
         NSInteger money = self.currentMoney - [[self.places[indexPath.row] price] integerValue];
         if (money < 0) {
             UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"Warning!"
-                                                                                message:@"Please, change your sum."
+                                                                                message:@"Entered amount is not enough. Please update inserted sum."
                                                                          preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                style:UIAlertActionStyleDefault handler:nil];

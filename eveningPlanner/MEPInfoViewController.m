@@ -84,13 +84,9 @@
     }
     
     [self basketButtonCustomizing];
-    
-    
-    
 }
 
 - (void)plusAnimation {
-    //self.animationPlus.hidden = YES;
     self.animationPlusBottomConstraint.constant = 8;
     self.animationPlusWidthConstraint.constant = 40;
     self.animationPlusCenterXConstraint.constant = 0;
@@ -141,7 +137,7 @@
         MEPPlaces *place = [context objectWithID:self.placeObjectID];
         if (self.currentMoney - [place.price integerValue] <0) {
             UIAlertController *moneyAlert = [UIAlertController alertControllerWithTitle:@"Warning!"
-                                                                                message:@"Please, change your sum."
+                                                                                message:@"Entered amount is not enough. Please update inserted sum."
                                                                          preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                style:UIAlertActionStyleDefault handler:nil];

@@ -242,7 +242,7 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
         imageThird:@"villaThree"
          urlString:@"http://vila.am"
      contactNumber:@"+374 10 671 050"
-           address:@"10/2 Building, Jrvezh village 15th St, Kotayk Marz, Armenia"
+           address:@"10/2 Building, Jrvezh village 15th St"
          placeType:@"Restaurant"
          longitude:@44.605951
           latitude:@40.187199];
@@ -559,7 +559,7 @@ static NSString *const kEntityNameMEPPlaces = @"MEPPlaces";
                   imageThird:@"parajanov3"
                    urlString:@"http://parajanovmuseum.am"
                contactNumber:@"+374 10 538 473"
-                     address:@"Dzoragyugh, 15-16 eth. qrt. Yerevan, Armenia"
+                     address:@"Dzoragyugh, 15-16 eth. qrt,s Yerevan, Armenia"
                    placeType:@"Museum"
                    longitude:@44.499103
                     latitude:@40.179186];
